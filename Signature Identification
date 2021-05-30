@@ -1,0 +1,53 @@
+import tensorflow as tf
+import matplotlib.pyplot as plt
+import cv2
+import os
+import numpy as np
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from tensorflow.keras.preprocessing import image
+from tensorflow.keras.optimizers import RMSprop
+
+img = image.load_img("image path")
+
+plt.imshow(img)
+
+cv2.imread(image path).shape
+
+train = ImageDataGenerator(rescale 1/255)
+validation = ImageDataGenerator(rescale 1/255)
+
+train_dataset = train.flow_from_directory("image path",
+                                          target_size(200,200),
+                                          batch_size = 3,
+                                          Class_mode = 'binary')
+
+Validation_dataset = Validation.flow_from_directory("image path",
+                                          target_size(200,200),
+                                          batch_size = 3,
+                                          Class_mode = 'binary')
+                                          
+model.compile(loss = 'binary.crossentropy'
+optimizer = RMSprop (lr=0.001),
+matrics = ['accuracy'])
+
+model_fit = moel.fit(train_dataset,
+                     steps_per epoch = 3,
+                     epochs = 30,
+                     Validation_data = test_dataset
+                     )
+                     
+                     dir_path = 'testdatasetpath'
+for i in os.listdir(dir_path)
+#print(i)
+img = image.load_img(dir_path + '//' + i)
+plt.imshow(img)
+plt.show() #for all iamges of testdata
+
+x = image.img_to_array(img)
+x = np.expand_dims(x, axis = 0)
+imges = np.vstack([X])
+val = model.predict(images)
+if val == 0
+  print('This is signature')
+else
+  print('This is not  signature')
